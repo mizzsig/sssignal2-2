@@ -2,10 +2,15 @@
 
 @section('title', '水飴信号ばーじょん２')
 
-@section('header')@include('common.header')@endsection
-
-@section('main')
+@section('header')
+@include('common.header')
 @endsection
 
-@section('sub')@include('common.sub')@endsection
+@section('main')
+aaa
+@endsection
+
+@section('sub')
+@include('common.sub')
+@endsection
 

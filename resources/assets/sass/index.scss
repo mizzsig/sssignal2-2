@@ -1,3 +1,34 @@
+html, body {
+	margin: 0px;
+	// for debug
+	background-color: #e0e0ff;
+}
+
 header {
-  height: 50px;
+  height: 40px;
+	// for debug
+	background-color: #f0f070;
+}
+
+.container {
+	text-align: center;
+}
+
+// mainとsubに適用する
+.content {
+	display: inline-block;
+}
+
+main {
+  @extend .content;
+  width: 900px;
+	// for debug
+	background-color: #70f0f0;
+}
+
+.sub {
+  @extend .content;
+  width: 300px;
+  // for debug
+  background-color: #f070f0;
 }

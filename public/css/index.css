@@ -1,4 +1,31 @@
+html,
+body {
+  margin: 0px;
+  background-color: #e0e0ff;
+}
+
 header {
-  height: 50px;
+  height: 40px;
+  background-color: #f0f070;
+}
+
+.container {
+  text-align: center;
+}
+
+.content,
+main,
+.sub {
+  display: inline-block;
+}
+
+main {
+  width: 900px;
+  background-color: #70f0f0;
+}
+
+.sub {
+  width: 300px;
+  background-color: #f070f0;
 }
 

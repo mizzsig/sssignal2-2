@@ -5,11 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
-    <header>@yield('header')</header>
-    <main>@yield('main')</main>
-    <div class="sub">@yield('sub')</div>
+<header>
+@yield('header')
+</header>
+
+<div class="container">
+<main>
+@yield('main')
+</main>
+
+<div class="sub">
+@yield('sub')
+</div>
+</div>
   </body>
 </html>
 
