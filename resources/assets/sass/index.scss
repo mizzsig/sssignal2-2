@@ -4,31 +4,34 @@ html, body {
 	background-color: #e0e0ff;
 }
 
-header {
-  height: 40px;
-	// for debug
-	background-color: #f0f070;
-}
+// ヘッダーと上の画像部分
+@import "header.scss";
 
+// mainとsubの親
 .container {
 	text-align: center;
+	max-width: 1200px;
+	margin: 0px auto;
 }
 
 // mainとsubに適用する
 .content {
 	display: inline-block;
+	float: left;
 }
 
 main {
   @extend .content;
-  width: 900px;
+  width: 75%;
 	// for debug
 	background-color: #70f0f0;
 }
+// mainの内部
+@import "main.scss";
 
 .sub {
   @extend .content;
-  width: 300px;
+  width: 25%;
   // for debug
   background-color: #f070f0;
 }

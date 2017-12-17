@@ -6,26 +6,71 @@ body {
 
 header {
   height: 40px;
+  width: 100%;
   background-color: #f0f070;
+  position: fixed;
+}
+
+header ul {
+  margin: 0px;
+}
+
+header ul li {
+  display: inline-block;
+  background-color: #B0B0B0;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 120px;
+}
+
+header ul li:hover {
+  background-color: #E0E0E0;
+}
+
+header ul li a {
+  display: block;
+}
+
+.header-padding {
+  height: 40px;
+}
+
+.main-img {
+  padding-top: 40px;
+  width: 100%;
 }
 
 .container {
   text-align: center;
+  max-width: 1200px;
+  margin: 0px auto;
 }
 
 .content,
 main,
 .sub {
   display: inline-block;
+  float: left;
 }
 
 main {
-  width: 900px;
+  width: 75%;
   background-color: #70f0f0;
 }
 
+main .search-bar {
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+main .search-button {
+  font-size: 18px;
+}
+
 .sub {
-  width: 300px;
+  width: 25%;
   background-color: #f070f0;
 }
 

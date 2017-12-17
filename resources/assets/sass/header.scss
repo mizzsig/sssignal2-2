@@ -1,0 +1,44 @@
+$header-height: 40px;
+// 上に出てくるヘッダー
+header {
+  height: $header-height;
+  width: 100%;
+  // for debug
+  background-color: #f0f070;
+  position: fixed;
+
+  ul {
+    margin: 0px;
+    li {
+      display: inline-block;
+      // for debug
+      background-color: #B0B0B0;
+      float: left;
+      height: $header-height;
+      line-height: $header-height;
+      text-align: center;
+      //padding: 0px 20px;
+      width: 120px;
+
+      &:hover {
+        // for debug
+        background-color: #E0E0E0;
+      }
+
+      a {
+        display: block;
+      }   
+    }   
+  }
+}
+
+.header-padding {
+  height: $header-height;
+}
+
+// 上にでっかく出てくる画像
+.main-img {
+  padding-top: $header-height;
+  width: 100%;
+}
+

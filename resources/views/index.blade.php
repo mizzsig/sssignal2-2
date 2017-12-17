@@ -7,7 +7,9 @@
 @endsection
 
 @section('main')
-aaa
+<div>記事一覧</div>
+<input class="search-bar"></input>
+<button class="search-button" onClick="console.log(1);">けんさく！</button>
 @endsection
 
 @section('sub')

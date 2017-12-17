@@ -1,0 +1,11 @@
+main {
+	$main-fontsize: 18px;
+	.search-bar {
+		opacity: 0.8;
+		font-size: $main-fontsize;
+	}
+
+	.search-button {
+		font-size: $main-fontsize;
+	}
+}
