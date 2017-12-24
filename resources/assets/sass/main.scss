@@ -5,7 +5,18 @@ main {
 		font-size: $main-fontsize;
 	}
 
+	.search-bar {
+		outline: 0;
+		border: 0px;
+	}
+
 	.search-button {
+		background-color: #9090F0;
+		border: none;
 		font-size: $main-fontsize;
+
+		&:active {
+			background-color: #90F090;
+		}
 	}
 }
