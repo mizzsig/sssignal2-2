@@ -10,11 +10,12 @@
 <div>記事一覧</div>
 <input class="search-bar" placeholder="記事を検索"></input>
 <button class="search-button" onClick="console.log(1);">けんさく！</button>
-<!-- dummy -->
 <div>
-	<div class="post">aaa</div>
-	<div class="post">bbb</div>
-	<div class="post">ccc</div>
+	@foreach ($posts as $post)
+	<div class="post">
+		<div class="post-title">{{ $post['title'] }}</div>
+	</div>
+	@endforeach
 </div>
 @endsection
 

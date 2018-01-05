@@ -10,9 +10,6 @@ class AboutController extends Controller
 		// route 'about'
     static function index()
 		{
-				$posts = Post::all();
-				echo "<pre>";
-				var_dump($posts);
-				exit;
+				return view('about');
 		}
 }
