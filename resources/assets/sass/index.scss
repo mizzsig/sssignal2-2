@@ -1,15 +1,15 @@
 html, body {
 	margin: 0px;
 	// for debug
-	background-color: #e0e0ff;
+	background-color: #E6E6FF;
+	font-family: "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, Arial, sans-serif;
+	color: #303030;
 }
-
-// ヘッダーと上の画像部分
-@import "header.scss";
 
 // mainとsubの親
 .container {
 	text-align: center;
+	width: 100%;
 	max-width: 1200px;
 	margin: 0px auto;
 //	padding: 0px 10px;
@@ -17,6 +17,9 @@ html, body {
 
 $small: "only screen and (max-width:800px)";
 $large: "only screen and (min-width:801px)";
+
+// ヘッダーと上の画像部分
+@import "header.scss";
 
 // mainとsubに適用する
 .content {
@@ -34,7 +37,8 @@ $large: "only screen and (min-width:801px)";
   @extend .content;
 
 	@media #{$large} {
-		width: 25%;
+		width: calc(25% - 10px);
+		margin-right: 10px;
 	}
 
 	@media #{$small} {

@@ -1,36 +1,95 @@
 $header-height: 40px;
+
+.header-li {
+	background-color: #C5C4EF;
+	height: $header-height;
+	line-height: $header-height;
+	text-align: center;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background-color: #9090E0;
+	}
+
+	a {
+		display: block;
+	}
+}
+
 // 上に出てくるヘッダー
 header {
   height: $header-height;
   width: 100%;
   // for debug
-  background-color: #f0f070;
+  background-color: #C5C4EF;
   position: fixed;
 	z-index: 100;
 
-  ul {
+	@media #{$small} {
+		.large-header {
+			display: none;
+		}
+	}
+
+	@media #{$large} {
+		.small-header {
+			display: none;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: #404040;
+
+		&:hover {
+			color: #000000;
+		}
+	}
+
+	// 大きい画面でのヘッダー
+	.large-header {
     margin: 0px;
+
     li {
+			@extend .header-li;
       display: inline-block;
-      // for debug
-      background-color: #B0B0B0;
       float: left;
-      height: $header-height;
-      line-height: $header-height;
-      text-align: center;
-      //padding: 0px 20px;
-      width: 120px;
+ 	    width: 120px;
+  	}
+	}
 
-      &:hover {
-        // for debug
-        background-color: #E0E0E0;
-      }
+	// 小さい画面でのヘッダー
+	.small-header {
+		margin: 0px;
 
-      a {
-        display: block;
-      }   
-    }   
-  }
+		li {
+			@extend .header-li;
+			display: inline-block;
+			float: left;
+			width: 120px;
+		}
+
+		.menu-trigger {
+			cursor: pointer;
+
+			&:hover .small-menu {
+				display: block;
+			}
+		}
+	}
+
+	// 小さい画面でメニューを押した時に出るやつ
+	.small-menu {
+		display: none;
+		margin: 0px;
+		padding: $header-height 0px 0px 0px;
+
+		li {
+			@extend .header-li;
+			height: 60px;
+			line-height: 60px;
+		}
+	}
 }
 
 .header-padding {
