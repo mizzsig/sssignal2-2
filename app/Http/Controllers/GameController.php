@@ -15,4 +15,13 @@ class GameController extends Controller
 						'posts' => $posts
 				]);
     }
+
+		// route '/game/{url}'
+		static function game($url) {
+				$post = Post::where('url', $url)->where('type', 'game')->get();
+
+				return view('article', [
+						'post' => $post[0]
+				]);
+		}
 }

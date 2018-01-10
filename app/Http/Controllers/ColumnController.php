@@ -15,4 +15,13 @@ class ColumnController extends Controller
 						'posts' => $posts
 				]);
     }
+
+		// route '/column/{id}'
+		static function article($url = '') {
+				$post = Post::where('url', $url)->get();
+
+				return view('article', [
+						'post' => $post[0]
+				]);
+		}
 }

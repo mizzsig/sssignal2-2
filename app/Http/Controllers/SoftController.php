@@ -15,4 +15,13 @@ class SoftController extends Controller
 						'posts' => $posts
 				]);
     }
+
+		// route '/soft/{url}'
+		static function soft($url) {
+			  $post = Post::where('url', $url)->where('type', 'soft')->get();
+
+				return view('article', [
+		       'post' => $post[0]
+	      ]); 
+		}
 }

@@ -12,8 +12,17 @@
 */
 
 Route::get('/', 'IndexController@index');
+
 Route::get('/about', 'AboutController@index');
+
 Route::get('/game', 'GameController@index');
+Route::get('/game/{url}', 'GameController@game');
+
 Route::get('/soft', 'SoftController@index');
+Route::get('/soft/{url}', 'SoftController@soft');
+
 Route::get('/column', 'ColumnController@index'); 
+Route::get('/column/{url}', 'ColumnController@article');
+
+
 
