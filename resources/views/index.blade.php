@@ -14,15 +14,29 @@
 <div>
 	@foreach ($posts as $post)
 	<div class="post">
-		<a href={{ $post['type'] . '/' . $post['url'] }}>
-			<div class="post-date">{{ $post['date'] }}</div>
-			<div class="post-title">{{ $post['title'] }}</div>
-			<div class="post-abstract">{{ $post['abstract'] }}</div>
-		</a>
-		<div class="post-tags">
-			@foreach ($post['tag'] as $tag)
-				<div class="post-tag">{{ $tag }}</div>
-			@endforeach
+<!--		<a href={{ $post['type'] . '/' . $post['url'] }}>   </a> -->
+		<!-- 左側に置く画像 -->
+		<div class="post-image">
+			<a href={{ '/' . $post['type'] . '/' . $post['url'] }}>
+				<img class="post-image" src={{ $post['image'] }}>
+			</a>
+		</div>
+		<!-- 右側の文章系 -->
+		<div class="post-detail">
+			<!-- タグ以外のリンクにするやつら -->
+			<div>
+				<a href={{ '/' . $post['type'] . '/' . $post['url'] }}>
+					<div class="post-date">{{ $post['date'] }}</div>
+					<div class="post-title">{{ $post['title'] }}</div>
+					<div class="post-abstract">{{ $post['abstract'] }}</div>
+				</a>
+			</div>
+			<!-- タグは別のリンクにするのでdivも別で -->
+			<div class="post-tags">
+				@foreach ($post['tag'] as $tag)
+					<div class="post-tag">{{ $tag }}</div>
+				@endforeach
+			</div>
 		</div>
 	</div>
 	@endforeach

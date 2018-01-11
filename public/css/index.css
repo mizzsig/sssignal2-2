@@ -202,15 +202,21 @@ main .section ul {
   height: 100%;
 }
 
-.post .post-img {
-  width: 200px;
+.post .post-image {
+  width: 100px;
   height: 100px;
   float: left;
 }
 
 .post .post-detail {
+  text-align: left;
+  margin: 10px;
   float: left;
-  margin: 0px;
+}
+
+.post .post-detail .post-title,
+.post .post-detail .post-abstract {
+  margin-left: 20px;
 }
 
 .sub {

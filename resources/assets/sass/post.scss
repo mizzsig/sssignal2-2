@@ -1,10 +1,12 @@
 .post {
+	$post-height: 100px;
+
 	// for debug
 	background-color: #F07070;
 	display: inline-block;
 	margin: 5px auto;
 	width: 95%;
-	height: 100px;
+	height: $post-height;
 
 	a {
 		display: block;
@@ -12,15 +14,24 @@
 		height: 100%;
 	}
 
-	.post-img {
-		width: 200px;
-		height: 100px;
+	.post-image {
+		width: $post-height;
+		height: $post-height;
 		float: left;
 	}
 
 	.post-detail {
-		float: left;
+		text-align: left;
+		padding: 10px;
+		width: 100%;
 
-		margin: 0px;
+		.post-title, .post-abstract {
+			margin-left: 20px;
+		}
+
+		.post-tag {
+			display: inline-block:
+			float: left;
+		}
 	}
 }
