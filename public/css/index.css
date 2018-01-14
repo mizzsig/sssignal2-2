@@ -160,20 +160,29 @@ main {
 }
 
 main .search-bar {
-  outline: 0;
+  outline: 0px;
   border: 0px;
   background-color: #D0D0D0;
   font-size: 18px;
+  width: 150px;
+  padding: 5px;
 }
 
 main .search-button {
   background-color: #9090F0;
-  border: none;
+  outline: 0px;
+  border: 0px;
   font-size: 18px;
+  padding: 5px;
 }
 
 main .search-button:active {
   background-color: #90F090;
+}
+
+main .search-count {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 main .section {
@@ -195,6 +204,15 @@ main .section .section-content {
   padding-left: 30px;
 }
 
+main .section .section-content a {
+  color: #A00000;
+  text-decoration: underline;
+}
+
+main .section .section-content a:hover {
+  color: #F07070;
+}
+
 main .section ul {
   list-style-type: none;
   padding: 0px;
@@ -206,7 +224,7 @@ main .section ul {
   margin: 10px auto;
   width: 95%;
   height: 100px;
-  border: 2px solid #B0B0F0;
+  border: 2px solid #9090F0;
   border-radius: 3px;
 }
 
@@ -232,7 +250,7 @@ main .section ul {
 }
 
 .post .post-detail .post-title {
-  border-bottom: 1px solid #F09090;
+  border-bottom: 1px solid #F0A0A0;
   padding-bottom: 3px;
   margin-bottom: 5px;
   font-size: 20px;

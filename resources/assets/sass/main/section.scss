@@ -3,7 +3,7 @@
 	text-align: left;
 	
 	$padding-size: 30px;
-	
+
 	.section-title {
 		font-size: 22px;
 		padding-left: $padding-size;
@@ -17,6 +17,15 @@
 
 	.section-content {
 		padding-left: $padding-size;
+
+		a {
+			color: #A00000;
+			text-decoration: underline;
+
+			&:hover {
+				color: #F07070;
+			}
+		}
 	}
 
 	ul {
