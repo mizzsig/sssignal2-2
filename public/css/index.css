@@ -8,6 +8,19 @@ body {
   color: #303030;
 }
 
+html a,
+body a {
+  color: #303030;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+html a:hover,
+body a:hover {
+  color: #F07070;
+}
+
 .container {
   text-align: center;
   width: 100%;
@@ -62,7 +75,6 @@ header {
 }
 
 header a {
-  text-decoration: none;
   color: #404040;
 }
 
@@ -189,11 +201,13 @@ main .section ul {
 }
 
 .post {
-  background-color: #F07070;
+  background-color: #DADAF0;
   display: inline-block;
-  margin: 5px auto;
+  margin: 10px auto;
   width: 95%;
   height: 100px;
+  border: 2px solid #B0B0F0;
+  border-radius: 3px;
 }
 
 .post a {
@@ -210,13 +224,36 @@ main .section ul {
 
 .post .post-detail {
   text-align: left;
-  margin: 10px;
   float: left;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: calc(100% - 100px);
 }
 
-.post .post-detail .post-title,
+.post .post-detail .post-title {
+  border-bottom: 1px solid #F09090;
+  padding-bottom: 3px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
 .post .post-detail .post-abstract {
+  margin-bottom: 5px;
   margin-left: 20px;
+}
+
+.post .post-detail .post-date {
+  display: inline-block;
+  float: left;
+  margin-left: 20px;
+  width: 100px;
+}
+
+.post .post-detail .post-tag {
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
 }
 
 .sub {

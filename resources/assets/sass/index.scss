@@ -1,9 +1,22 @@
+$font-color: #303030;
+$transition: all 0.3s ease;
+
 html, body {
 	margin: 0px;
 	// for debug
 	background-color: #E6E6FF;
 	font-family: "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, Arial, sans-serif;
-	color: #303030;
+	color: $font-color;
+
+	a {
+		color: $font-color;
+		transition: $transition;
+		text-decoration: none;
+
+		&:hover {
+			color: #F07070;
+		}
+	}
 }
 
 // mainとsubの親

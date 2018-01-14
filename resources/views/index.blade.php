@@ -14,7 +14,6 @@
 <div>
 	@foreach ($posts as $post)
 	<div class="post">
-<!--		<a href={{ $post['type'] . '/' . $post['url'] }}>   </a> -->
 		<!-- 左側に置く画像 -->
 		<div class="post-image">
 			<a href={{ '/' . $post['type'] . '/' . $post['url'] }}>
@@ -24,15 +23,16 @@
 		<!-- 右側の文章系 -->
 		<div class="post-detail">
 			<!-- タグ以外のリンクにするやつら -->
-			<div>
+			<div class="post-link">
 				<a href={{ '/' . $post['type'] . '/' . $post['url'] }}>
-					<div class="post-date">{{ $post['date'] }}</div>
 					<div class="post-title">{{ $post['title'] }}</div>
 					<div class="post-abstract">{{ $post['abstract'] }}</div>
 				</a>
 			</div>
 			<!-- タグは別のリンクにするのでdivも別で -->
 			<div class="post-tags">
+				<div class="post-date">{{ $post['date'] }}</div>
+				<div class="post-tag">tags : </div>
 				@foreach ($post['tag'] as $tag)
 					<div class="post-tag">{{ $tag }}</div>
 				@endforeach
