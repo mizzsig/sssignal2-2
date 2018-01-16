@@ -12,6 +12,7 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/index.scss', 'public/css');
+   .sass('resources/assets/sass/index.scss', 'public/css')
+	 .sass('resources/assets/sass/mailform.scss', 'public/css');
 
 

@@ -13,7 +13,8 @@
 
 Route::get('/', 'IndexController@index');
 
-Route::get('/about', 'AboutController@index');
+Route::get('/about',  'AboutController@index');
+Route::post('/about', 'AboutController@contactSent');
 
 Route::get('/game', 'GameController@index');
 Route::get('/game/{url}', 'GameController@game');

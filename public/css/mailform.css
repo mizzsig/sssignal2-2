@@ -1,0 +1,23 @@
+.mailform {
+  padding-top: 16px;
+}
+
+.mailform input,
+.mailform textarea,
+.mailform button {
+  display: block;
+  padding: 7px 5px;
+  font-size: 14px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.mailform input,
+.mailform textarea {
+  margin-bottom: 10px;
+}
+
+.mailform textarea {
+  resize: none;
+}
+

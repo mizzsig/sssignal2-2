@@ -6,9 +6,7 @@
 
 	.section-title {
 		font-size: 22px;
-		padding-left: $padding-size;
-		padding-top: 3px;
-		padding-bottom: 3px;
+		padding: 3px $padding-size;
 
 		background-color: rgba(#0000FF, 0.2);
 		border-bottom: 2px solid #8383F0;
@@ -16,7 +14,7 @@
 	}
 
 	.section-content {
-		padding-left: $padding-size;
+		padding: 0px $padding-size;
 
 		a {
 			color: #A00000;

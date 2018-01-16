@@ -1,5 +1,6 @@
 @extends('common.layout')
 
+<link rel="stylesheet" href="/css/mailform.css">
 @section('title', 'About | 水飴信号ばーじょん２')
 
 @section('header')
@@ -14,7 +15,7 @@
 		<p>超すごいサイトになればいいな・・・！</p>
 		<p>このサイトはどのページもリンクフリーです。<br>
 		画像の無断転載と直リンクはご遠慮ください。<br>
-		ご意見・ご連絡などは以下のメールフォーム(まだない)か、Twitterにどうぞ！</p>
+		ご意見・ご連絡などは下のメールフォームか、Twitterにどうぞ！</p>
 	</div>
 </div>
 <div class="section">
@@ -31,6 +32,17 @@
 			<li><a href="https://codepen.io/toera">CodePen</a></li>
 			<li><a href="http://sssignal.web.fc2.com/">旧・水飴信号</a></li>
 		</ul>
+	</div>
+</div>
+<div class="section">
+	<div class="section-title">メールフォーム</div>
+	<div class="section-content">
+		<form class="mailform" method="post">
+			<input placeholder="名前(任意)">
+			<input placeholder="メールアドレス(任意)">
+			<textarea placeholder="本文(必須)"></textarea>
+			<button type="submit">そうしん！</button>
+		</form>
 	</div>
 </div>
 @endsection
