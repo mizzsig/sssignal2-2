@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Mail\ContactSent;
+use Illuminate\Support\Facades\Mail;
 
 class AboutController extends Controller
 {
@@ -17,7 +18,15 @@ class AboutController extends Controller
 		// お問い合わせメール送信
 		static function contactSent(Request $request)
 		{
-				Mail::to('送信先アドレス(configとかに書きたい)')
-						->send(new ContactSent());	
+				$contact = $request->all();
+
+				if (!isset($contact['body'])) {
+					return view('about');
+				}
+				
+				Mail::to($_ENV['MAIL_USERNAME'])
+						->send(new ContactSent($contact));
+
+				return view('about');	
 		}
 }

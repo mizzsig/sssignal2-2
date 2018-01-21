@@ -1,13 +1,16 @@
 .mailform {
   padding-top: 16px;
+  text-align: center;
 }
 
 .mailform input,
 .mailform textarea,
 .mailform button {
-  display: block;
+  display: inline-block;
   padding: 7px 5px;
   font-size: 14px;
+  border: 1px solid #AAA;
+  border-radius: 3px;
   width: 100%;
   max-width: 400px;
 }
@@ -19,5 +22,6 @@
 
 .mailform textarea {
   resize: none;
+  height: 100px;
 }
 

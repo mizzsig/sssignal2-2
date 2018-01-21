@@ -1,19 +1,9 @@
-<!-- メールのHTML -->
-<div class="mailform">
-	<p>
-		名前 : {{ $order->name }}
-	</p>
-	
-	<p>
-		メールアドレス : {{ $order->address }}
-	</p>
-	
-	<p>
-		件名 : {{ $order->subject }}
-	</p>
+[名前]
+{{ $order['name'] }}
 
-	<p>
-		本文 : <br>
-		{{ $order->body }}
-	</p>
-</div>
+[メールアドレス]
+{{ $order['address'] }}
+
+[本文]
+{{ $order['body'] }}
+

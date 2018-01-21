@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+//use App\Order;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -11,14 +12,14 @@ class ContactSent extends Mailable
 {
     use Queueable, SerializesModels;
 
-		protected $order;
+		public $order;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Order $order)
+    public function __construct($order)
     {
         $this->order = $order;
     }
@@ -30,6 +31,7 @@ class ContactSent extends Mailable
      */
     public function build()
     {
-        return $this->view('common.email');
+        return $this->subject('お問い合わせメール')
+										->text('common.email');
     }
 }

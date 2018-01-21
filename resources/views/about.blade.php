@@ -1,8 +1,8 @@
 @extends('common.layout')
 
-<link rel="stylesheet" href="/css/mailform.css">
 @section('title', 'About | 水飴信号ばーじょん２')
 
+<link rel="stylesheet" href="/css/mailform.css">
 @section('header')
 @include('common.header')
 @endsection
@@ -38,9 +38,9 @@
 	<div class="section-title">メールフォーム</div>
 	<div class="section-content">
 		<form class="mailform" method="post">
-			<input placeholder="名前(任意)">
-			<input placeholder="メールアドレス(任意)">
-			<textarea placeholder="本文(必須)"></textarea>
+			<input name="name" placeholder="名前">
+			<input name="address" placeholder="メールアドレス">
+			<textarea name="body" required placeholder="本文(必須)"></textarea>
 			<button type="submit">そうしん！</button>
 		</form>
 	</div>

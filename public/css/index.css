@@ -232,7 +232,8 @@ main .section ul {
   height: 100%;
 }
 
-.post .post-image {
+.post .post-image,
+.post .post-image2 {
   width: 100px;
   height: 100px;
   float: left;
