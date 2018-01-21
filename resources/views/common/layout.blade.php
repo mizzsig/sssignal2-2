@@ -13,7 +13,7 @@
 </header>
 
 <div class="main-img">
-	<img src="http://blog-imgs-83.fc2.com/s/s/s/sssignal/header.png">
+	<img src="/images/header.png">
 </div>
 
 <div class="container">

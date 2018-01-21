@@ -1,5 +1,5 @@
 <ul class="large-header">
-	<li><a href="/"><img src="https://sssignal.com/assets/header_mini.png"></a></li>
+	<li><a href="/"><img src="/images/header_mini.png"></a></li>
 	<li><a href="/">Top</a></li>
 	<li><a href="/about">About</a></li>
 	<li><a href="/game">Game</a></li>
@@ -8,7 +8,7 @@
 </ul>
 
 <ul class="small-header">
-	<li><a href="/"><img src="https://sssignal.com/assets/header_mini.png"></a></li>
+	<li><a href="/"><img src="/images/header_mini.png"></a></li>
 	<li class="menu-trigger">menu ▽</li>
 </ul>
 
