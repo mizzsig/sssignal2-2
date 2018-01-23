@@ -25,6 +25,9 @@
 @yield('sub')
 </div>
 </div>
+
+<script src="/js/jquery.js" async></script>
+<script src="/js/layout.js" async></script>
   </body>
 </html>
 

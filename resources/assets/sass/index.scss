@@ -19,19 +19,6 @@ html, body {
 	}
 }
 
-// 上に出てくるでっかい画像
-.main-img {
-	text-align: center;
-	overflow: hidden;
-
-	img {
-		width: 100%;
-		max-width: 1200px;
-		height: 150px;
-		object-fit: cover;
-	}
-}
-
 // mainとsubの親
 .container {
 	text-align: center;

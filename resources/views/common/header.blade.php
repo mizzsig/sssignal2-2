@@ -12,7 +12,7 @@
 	<li class="menu-trigger">menu ▽</li>
 </ul>
 
-<ul class="small-menu">
+<ul class="small-menu small-menu-slide-up">
 	<li><a href="/">Top</a></li>
   <li><a href="/about">About</a></li>
   <li><a href="/game">Game</a></li>
