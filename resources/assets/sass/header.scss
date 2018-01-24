@@ -23,6 +23,10 @@ header {
   // for debug
   background-color: #C5C4EF;
   position: fixed;
+	user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 
 	@media #{$small} {
 		.large-header {
@@ -115,6 +119,13 @@ header {
 	height: 150px;
 
 	img {
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		-webkit-user-drag: none;
+		user-drag: none;
+
 		width: 100%;
 		max-width: 1200px;
 		height: 150px;
