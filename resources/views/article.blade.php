@@ -7,12 +7,10 @@
 @endsection
 
 @section('main')
-<div class="section">
-	<div class="section-title">{{ $post['title'] }}</div>
-	<div class="section-content">
-		<p>{{ $post['body'] }}</p>
-	</div>
-</div>
+
+@inject('body', 'App\Providers\PostBodyServiceProvider')
+{!! $body->writeBody($post['body']) !!}
+
 @endsection
 
 @section('sub')

@@ -180,6 +180,9 @@ return [
 				// To connect MongoDB
 				Jenssegers\Mongodb\MongodbServiceProvider::class,
 
+				// MongoDBのBodyを表示用に分解してくれる
+				App\Providers\PostBodyServiceProvider::class,
+
     ],
 
     /*
