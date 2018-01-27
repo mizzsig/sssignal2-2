@@ -1,6 +1,6 @@
 @extends('common.layout')
 
-@section('title', 'About | 水飴信号ばーじょん２')
+@section('title', 'About - 水飴信号 - Starch Syrup Signal -')
 
 <link rel="stylesheet" href="/css/mailform.css">
 @section('header')

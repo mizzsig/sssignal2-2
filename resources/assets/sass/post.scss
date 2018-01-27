@@ -33,24 +33,39 @@
 			padding-bottom: 3px;
 			margin-bottom: 5px;
 			font-size: 20px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 
 		.post-abstract {
 			margin-bottom: 5px;
 			margin-left: 20px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 
-		.post-date {
-			display: inline-block;
-			float: left;
-			margin-left: 20px;
-			width: 100px;
-		}
+		.post-tags {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 
-		.post-tag {
-			display: inline-block;
-			float: left;
-			margin-left: 10px;
+			.post-date {
+				display: inline-block;
+				float: left;
+				margin-left: 20px;
+				width: 100px;
+			}
+
+			.post-tag {
+				display: inline-block;
+				margin-left: 10px;
+
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
 		}
 	}
 }

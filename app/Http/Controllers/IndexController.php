@@ -13,6 +13,6 @@ class IndexController extends Controller
 
         return view('index', [
 						'posts' => $posts
-				]);
+				])->with('title', '');
     }
 }

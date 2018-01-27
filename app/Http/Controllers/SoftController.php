@@ -13,12 +13,16 @@ class SoftController extends Controller
 
         return view('index', [
 						'posts' => $posts
-				]);
+				])->with('title', 'Soft - ');
     }
 
 		// route '/soft/{url}'
 		static function soft($url) {
 			  $post = Post::where('url', $url)->where('type', 'soft')->get();
+
+				if (!isset($post[0])) {
+						abort('404');
+				}
 
 				return view('article', [
 		       'post' => $post[0]

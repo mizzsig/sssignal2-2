@@ -21,6 +21,11 @@ body a:hover {
   color: #F07070;
 }
 
+html img,
+body img {
+  max-width: 100%;
+}
+
 .container {
   text-align: center;
   width: 100%;
@@ -284,24 +289,38 @@ main .section ul {
   padding-bottom: 3px;
   margin-bottom: 5px;
   font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .post .post-detail .post-abstract {
   margin-bottom: 5px;
   margin-left: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.post .post-detail .post-date {
+.post .post-detail .post-tags {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.post .post-detail .post-tags .post-date {
   display: inline-block;
   float: left;
   margin-left: 20px;
   width: 100px;
 }
 
-.post .post-detail .post-tag {
+.post .post-detail .post-tags .post-tag {
   display: inline-block;
-  float: left;
   margin-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sub {
