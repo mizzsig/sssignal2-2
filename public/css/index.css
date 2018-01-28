@@ -322,10 +322,6 @@ main .section ul {
   white-space: nowrap;
 }
 
-.sub {
-  background-color: #f070f0;
-}
-
 @media only screen and (min-width: 801px) {
   .sub {
     width: calc(25% - 10px);
