@@ -5,7 +5,7 @@
 <meta name="twitter:site" content="@mizzsig">
 <meta name="twitter:title" content="{{ $post['title'] . ' - 水飴信号 - Starch Syrup Signal -' }}">
 <meta name="twitter:description" content="{{ $post['description'] }}">
-<meta name="twitter:image" content="{{ $post['image'] }}">
+<meta name="twitter:image" content="{{'https://sssignal.com' . $post['image'] }}">
 
 @section('header')
 @include('common.header')

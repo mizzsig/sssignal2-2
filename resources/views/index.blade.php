@@ -5,7 +5,7 @@
 <meta name="twitter:site" content="@mizzsig">
 <meta name="twitter:title" content="水飴信号 - Starch Syrup Signal -">
 <meta name="twitter:description" content="プログラムを作ったりするサイトです">
-<meta name="twitter:image" content="/images/header.png">
+<meta name="twitter:image" content="https://sssignal.com/images/header.png">
 
 @section('header')
 @include('common.header')
