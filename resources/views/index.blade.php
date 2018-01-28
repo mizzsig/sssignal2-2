@@ -32,7 +32,7 @@
 			<div class="post-link">
 				<a href={{ '/' . $post['type'] . '/' . $post['url'] }}>
 					<div class="post-title">{{ $post['title'] }}</div>
-					<div class="post-abstract">{{ $post['abstract'] }}</div>
+					<div class="post-abstract">{{ $post['description'] }}</div>
 				</a>
 			</div>
 			<!-- タグは別のリンクにするのでdivも別で -->
