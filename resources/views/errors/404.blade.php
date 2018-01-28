@@ -6,6 +6,12 @@
 @include('common.header')
 @endsection
 
+<style>
+html, body, main {
+	background-image: url('/images/404_bg.png');
+}
+</style>
+
 @section('main')
 <img src="/images/404.png">
 @endsection
