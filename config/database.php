@@ -85,11 +85,6 @@ return [
 						'host' => env('DB_HOST', 'localhost'),
 						'port' => env('DB_POST', 27017),
 						'database' => env('DB_DATABASE', 'testDB'),
-//						'username' => env('DB_USERNAME', ''),
-//						'password' => env('DB_PASSWORD', ''),
-						'options' => [
-								'database' => 'admin'
-						]
 				],
 
     ],

@@ -26,8 +26,30 @@
 		}
 	}
 
+	.section-underline {
+		font-size: 20px;
+		margin: 20px $padding-size;
+		border-left: 5px solid #8383F0;
+		border-bottom: 1px solid #8383F0;
+		padding-left: 5px;
+		padding-bottom: 5px;
+	}
+
+	.section-marginTop {
+		margin-top: 50px;
+	}
+
+	.prettyprint {
+		overflow: scroll;
+	}
+
 	ul {
 		list-style-type: none;
 		padding: 0px;
+	}
+
+	p {
+		margin: 20px 0px;
+		line-height: 1.5;
 	}
 }

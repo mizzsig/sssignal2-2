@@ -248,9 +248,31 @@ main .section .section-content a:hover {
   color: #F07070;
 }
 
+main .section .section-underline {
+  font-size: 20px;
+  margin: 20px 30px;
+  border-left: 5px solid #8383F0;
+  border-bottom: 1px solid #8383F0;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+
+main .section .section-marginTop {
+  margin-top: 50px;
+}
+
+main .section .prettyprint {
+  overflow: scroll;
+}
+
 main .section ul {
   list-style-type: none;
   padding: 0px;
+}
+
+main .section p {
+  margin: 20px 0px;
+  line-height: 1.5;
 }
 
 .post {
