@@ -262,7 +262,7 @@ main .section .section-marginTop {
 }
 
 main .section .prettyprint {
-  overflow: scroll;
+  overflow: auto;
 }
 
 main .section ul {
