@@ -9,11 +9,7 @@
 			gtag('js', new Date());
 			gtag('config', 'UA-79013420-2');
 		</script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title')</title>
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
+		@yield('meta')
   </head>
   <body>
 <header>
@@ -34,10 +30,7 @@
 </div>
 </div>
 
-<script src="/js/jquery.js"></script>
-<script src="/js/layout.js" async></script>
-<!-- コードのハイライト用 -->
-<script src="/js/prettify.js" async></script>
+@yield('script')
   </body>
 </html>
 

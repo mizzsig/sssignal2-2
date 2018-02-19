@@ -2,7 +2,11 @@
 
 @section('title', 'About - 水飴信号 - Starch Syrup Signal -')
 
+@section('meta')
+@include('common.meta')
 <link rel="stylesheet" href="/css/mailform.css">
+@endsection
+
 @section('header')
 @include('common.header')
 @endsection
@@ -49,4 +53,8 @@
 
 @section('sub')
 @include('common.sub')
+@endsection
+
+@section('script')
+@include('common.script')
 @endsection

@@ -19,6 +19,7 @@ Route::post('/about', 'AboutController@contactSent');
 Route::get('/game', 'GameController@index');
 Route::get('/game/{url}', 'GameController@game');
 
+Route::get('/soft/ChekiTekiReview', 'soft\ChekiTekiReviewController@index');
 Route::get('/soft', 'SoftController@index');
 Route::get('/soft/{url}', 'SoftController@soft');
 
