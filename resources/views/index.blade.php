@@ -16,6 +16,10 @@
 @include('common.header')
 @endsection
 
+@section('main-img')
+<img src="/images/header.png">
+@endsection
+
 @section('main')
 <!-- 今後のバージョンで実装 (๑╹ω╹๑ )
 <input class="search-bar" placeholder="記事を検索"></input>

@@ -16,6 +16,10 @@
 @include('common.header')
 @endsection
 
+@section('main-img')
+<img src="/images/header.png">
+@endsection
+
 @section('main')
 
 @inject('body', 'App\Providers\PostBodyServiceProvider')

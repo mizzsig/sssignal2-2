@@ -17,7 +17,7 @@
 </header>
 
 <div class="main-img">
-	<img src="/images/header.png">
+@yield('main-img')
 </div>
 
 <div class="container">

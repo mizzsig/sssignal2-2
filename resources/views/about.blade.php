@@ -11,6 +11,10 @@
 @include('common.header')
 @endsection
 
+@section('main-img')
+<img src="/images/header.png">
+@endsection
+
 @section('main')
 <div class="section">
 	<div class="section-title">このサイトについて</div>
