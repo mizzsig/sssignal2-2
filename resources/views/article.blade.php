@@ -4,6 +4,8 @@
 
 @section('meta')
 @include('common.meta')
+@inject('body', 'App\Providers\PostBodyServiceProvider')
+{!! $body->writeStyle($post['styles']) !!}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@mizzsig">
 <meta name="twitter:title" content="{{ $post['title'] . ' - 水飴信号 - Starch Syrup Signal -' }}">
@@ -17,14 +19,11 @@
 @endsection
 
 @section('main-img')
-<img src="/images/header.png">
+<img src="{{ $post['main-image'] }}">
 @endsection
 
 @section('main')
-
-@inject('body', 'App\Providers\PostBodyServiceProvider')
 {!! $body->writeBody($post['body']) !!}
-
 @endsection
 
 @section('sub')
@@ -33,4 +32,5 @@
 
 @section('script')
 @include('common.script')
+{!! $body->writeScript($post['scripts']) !!}
 @endsection

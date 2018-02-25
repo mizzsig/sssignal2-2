@@ -26,26 +26,69 @@ class PostBodyServiceProvider extends ServiceProvider
         //
     }
 
-		/**
-		 * MongoDBのBodyを分解！
-		 */
-		public function writeBody($body)
-		{
-				if (is_array($body)) {
-						$str = '';
-						foreach ($body as $value) {
-								if (is_array($value['body'])) {
-										$str .= '<div class="' . $value['class'] . '">' . $this->writeBody($value['body']) . '</div>';
-								} else {
-										$str .= '<div class="' . $value['class'] . '">' . $value['body'] . '</div>';
-								}
-						}
-						
-						return $str;
-				}
-		}
+    /**
+     * MongoDBのBodyを分解
+     */
+    public function writeBody($body)
+    {
+        if (is_array($body)) {
+            $str = '';
+            foreach ($body as $value) {
+                // DBの値に応じたDOM要素を出力
+                if (is_array($value['body'])) {
+                    $str .= '<' . $value['type'] . ' class="' . $value['class'] . '">' . $this->writeBody($value['body']) . '</' . $value['type'] . '>';
+                } else {
+                    $str .= '<' . $value['type'] . ' class="' . $value['class'] . '">' . $value['body'] . '</' . $value['type'] . '>';
+                }
+            }
 
-		public function __construct()
-		{
-		}
+            return $str;
+        }
+    }
+
+    /**
+     * ページ特有のスクリプトを設置する
+     * 
+     * @param  string $scripts['file'] 読み込むファイルパス
+     * @param  bool   $scripts['async'] 非同期で読み込むかどうか
+     * @return string $str 読み込むスクリプトファイルを指定したDOM
+     */
+    public function writeScript($scripts)
+    {
+        if (isset($scripts) && is_array($scripts)) {
+            $str = '';
+            
+            foreach ($scripts as $script) {
+                $str .= '<script src="' . $script['file'] . '"';
+
+                if ($script['async']) {
+                    $str .= ' async';
+                }
+
+                $str .= '></script>';
+            }
+
+            return $str;
+        }
+    }
+
+    /**
+     * ページ特有のCSSを設置する
+     */
+    public function writeStyle($styles)
+    {
+        if (isset($styles) && is_array($styles)) {
+            $str = '';
+
+            foreach ($styles as $style) {
+                $str .= '<link rel="stylesheet" type="text/css" href="' . $style['file'] . '">';
+            }
+
+            return $str;
+        }
+    }
+
+    public function __construct()
+    {
+    }
 }
