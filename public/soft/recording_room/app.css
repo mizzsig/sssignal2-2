@@ -1,0 +1,30 @@
+.recording-wrapper {
+    text-align: center;
+}
+
+.recording-video, .saved {
+    max-width: 100%;
+}
+
+.recording-button {
+    background: rgb(160, 160, 160);
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 0px;
+    margin: 5px;
+    text-align: center;
+    width: 45%;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.recording-button-on {
+    background: rgb(199, 200, 255);
+}
+
+.recording-button-on:hover {
+    background: rgb(197, 255, 219);
+}
