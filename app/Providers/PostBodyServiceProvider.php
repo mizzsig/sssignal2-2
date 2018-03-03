@@ -36,9 +36,9 @@ class PostBodyServiceProvider extends ServiceProvider
             foreach ($body as $value) {
                 // DBの値に応じたDOM要素を出力
                 if (is_array($value['body'])) {
-                    $str .= '<' . $value['type'] . ' class="' . $value['class'] . '">' . $this->writeBody($value['body']) . '</' . $value['type'] . '>';
+                    $str .= '<' . $value['type'] . ' class="' . $value['class'] . '" ' . (isset($value['option']) ? $value['option'] : '') . '>' . $this->writeBody($value['body']) . '</' . $value['type'] . '>';
                 } else {
-                    $str .= '<' . $value['type'] . ' class="' . $value['class'] . '">' . $value['body'] . '</' . $value['type'] . '>';
+                    $str .= '<' . $value['type'] . ' class="' . $value['class'] . '" ' . (isset($value['option']) ? $value['option'] : '') . '>' . $value['body'] . '</' . $value['type'] . '>';
                 }
             }
 
