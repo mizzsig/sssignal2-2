@@ -9,23 +9,23 @@ class ColumnController extends Controller
 {
     // route '/column'
     static function index() {
-				$posts = Post::where('type', 'column')->orderBy('_id', 'desc')->get();
+        $posts = Post::where('type', 'column')->orderBy('_id', 'desc')->get();
 
         return view('index', [
-						'posts' => $posts
-				])->with('title', 'Column - ');
+            'posts' => $posts
+        ])->with('title', 'Column - ');
     }
 
-		// route '/column/{id}'
-		static function article($url = '') {
-				$post = Post::where('url', $url)->get();
+    // route '/column/{id}'
+    static function article($url = '') {
+        $post = Post::where('url', $url)->get();
 
-				if (!isset($post[0])) {
-						abort('404');
-				}
+        if (!isset($post[0])) {
+            abort('404');
+        }
 
-				return view('article', [
-						'post' => $post[0]
-				]);
-		}
+        return view('article', [
+            'post' => $post[0]
+        ]);
+    }
 }
