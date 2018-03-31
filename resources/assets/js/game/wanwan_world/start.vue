@@ -19,7 +19,6 @@ export default {
     name: 'start',
     data: function() {
         return {
-            // show_flag: true
             state: store.state
         }
     },

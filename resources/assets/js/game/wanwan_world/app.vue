@@ -1,5 +1,8 @@
 <template>
-    <start/>
+    <div id="wrapper">
+        <start class="game-component"/>
+        <stage class="game-component"/>
+    </div>
 </template>
 
 <script>
@@ -14,7 +17,7 @@ export default {
     padding: 0px;
 }
 
-html, body {
+html, body, #wrapper {
     width: 100%;
     height: 100%;
     background-color: #55FF55;
@@ -22,5 +25,9 @@ html, body {
 
 img {
     max-width: 100%;
+}
+
+.game-component {
+    position: fixed;
 }
 </style>
