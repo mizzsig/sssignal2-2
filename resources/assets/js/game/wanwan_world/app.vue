@@ -29,5 +29,7 @@ img {
 
 .game-component {
     position: fixed;
+    top: 0px;
+    left: 0px;
 }
 </style>

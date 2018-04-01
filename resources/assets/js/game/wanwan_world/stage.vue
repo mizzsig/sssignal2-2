@@ -1,9 +1,8 @@
 <template>
     <transition name="anime">
         <div class="wrapper" v-if="!state.isTitle">
-            <div class="title">
-                <img src="/images/game/wanwan_world/title.png">
-            </div>
+            <character/>
+            <status/>
         </div>
     </transition>
 </template>
