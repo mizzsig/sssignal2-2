@@ -32,4 +32,9 @@ img {
     top: 0px;
     left: 0px;
 }
+
+.inline-block {
+    display: inline-block;
+    vertical-align: middle;
+}
 </style>
