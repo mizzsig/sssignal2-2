@@ -58,8 +58,7 @@ $large: "only screen and (min-width:801px)";
 	}
 
 	@media #{$small} {
-		width: 70%;
-		min-width: 300px;
+		width: 80%;
 		margin: 10px auto;
 		float: none;
 	}

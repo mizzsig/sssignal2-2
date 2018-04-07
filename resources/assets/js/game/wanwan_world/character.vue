@@ -43,7 +43,7 @@ export default {
 <style lang="scss" scoped>
 .character {
     position: fixed;
-    right: 0px;
+    right: 30px;
     bottom: -50px;
 }
 </style>

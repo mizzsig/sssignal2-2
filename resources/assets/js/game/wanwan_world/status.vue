@@ -1,24 +1,18 @@
 <template>
     <div class="wrapper">
         <div id="hp">
-            <div class="inline-block">
-                <div class="inline-block" style="width:35px">HP</div>
-                <div class="inline-block">:</div>
-            </div>
-            <svg class="inline-block" width="100" height="20" viewBox="0 0 100 20">
-                <rect class="bar-status" x1="0" y1="0" :width="100" height="20" rx="3" ry="3" fill="#666666"></rect>
-                <rect class="bar-status" id="hp-now" x1="0" y1="0" width="50" height="20" rx="3" ry="3" fill="#00AA00"></rect>
+            <div class="inline-block" style="width:35px">HP</div>
+            <svg class="inline-block">
+                <rect class="bar-status max" width="100" height="20" rx="3" ry="3"></rect>
+                <rect class="bar-status now" id="hp-now" :width="50" height="20" rx="3" ry="3"></rect>
             </svg>
             <div class="inline-block">{{ now }} / {{ max }}</div>
         </div>
         <div>
-            <div class="inline-block">
-                <div class="inline-block" style="width:35px">EXP</div>
-                <div class="inline-block">:</div>
-            </div>
-            <svg class="inline-block" width="100" height="20" viewBox="0 0 100 20">
-                <rect class="bar-status" x1="0" y1="0" :width="100" height="20" rx="3" ry="3" fill="#666666"></rect>
-                <rect class="bar-status" id="exp-now" x1="0" y1="0" width="50" height="20" rx="3" ry="3" fill="#00AA00"></rect>
+            <div class="inline-block" style="width:35px">EXP</div>
+            <svg class="inline-block">
+                <rect class="bar-status max" width="100" height="20" rx="3" ry="3"></rect>
+                <rect class="bar-status now" id="exp-now" :width="50" height="20" rx="3" ry="3"></rect>
             </svg>
             <div class="inline-block">50 / 100</div>
         </div>
@@ -41,5 +35,21 @@ export default {
     position: fixed;
     bottom: 30px;
     left: 30px;
+}
+
+svg {
+    width: 200px;
+    height: 20px;
+
+    .max {
+        fill: #666666;
+    }
+    .now {
+        fill: #00AA00;
+    }
+}
+
+.bar-status {
+    width: 300px;
 }
 </style>
