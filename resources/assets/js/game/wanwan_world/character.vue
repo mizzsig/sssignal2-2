@@ -11,7 +11,7 @@ export default {
     name: 'character',
     data: function () {
         return {
-            character_image: '/images/game/wanwan_world/wanko_dummy.png',
+            character_image: store.state.imageBase64.wanko_wait,
             isJumping: false
         }
     },
@@ -20,7 +20,7 @@ export default {
             if (!this.isJumping) {
                 let character = this;
                 character.isJumping = true;
-                character.character_image = '/images/game/wanwan_world/wanko_start_dummy.png';
+                character.character_image = store.state.imageBase64.wanko_jump;
 
                 anime({
                     targets: event.target,
@@ -30,7 +30,7 @@ export default {
                     ],
                     easing: 'linear',
                     complete: function() {
-                        character.character_image = '/images/game/wanwan_world/wanko_dummy.png';
+                        character.character_image = store.state.imageBase64.wanko_wait;
                         character.isJumping = false;
                     }
                 });

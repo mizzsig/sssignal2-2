@@ -1,30 +1,34 @@
 <template>
     <div class="wrapper">
-        <div class="width-100per name">{{enemyName}}</div>
-        <div id="hp" class="width-100per" style="margin-bottom:30px;">
-            <div class="inline-block" style="width:35px">HP</div>
-            <svg class="inline-block" :viewBox="enemyHpViewBox">
-                <rect class="bar-status max" :width="enemyHpMax" :height="enemyHpViewBoxHeight" :rx="enemyHpRadius" :ry="enemyHpRadius"></rect>
-                <rect class="bar-status now" id="hp-now" :width="enemyHpNow" :height="enemyHpViewBoxHeight" :rx="enemyHpRadius" :ry="enemyHpRadius"></rect>
-                <text :x="enemyHpMax / 2" :y="enemyHpViewBoxHeight * 0.8" text-anchor="middle" :font-size="enemyHpViewBoxHeight * 0.8">{{ enemyHpNow }} / {{ enemyHpMax }}</text>
-            </svg>
+        <div class="enemy">
+            <div class="width-100per name">{{enemyName}}</div>
+            <div id="hp" class="width-100per">
+                <div class="inline-block" style="width:35px">HP</div>
+                <svg class="inline-block" :viewBox="enemyHpViewBox">
+                    <rect class="bar-status max" :width="enemyHpMax" :height="enemyHpViewBoxHeight" :rx="enemyHpRadius" :ry="enemyHpRadius"></rect>
+                    <rect class="bar-status now" id="hp-now" :width="enemyHpNow" :height="enemyHpViewBoxHeight" :rx="enemyHpRadius" :ry="enemyHpRadius"></rect>
+                    <text :x="enemyHpMax / 2" :y="enemyHpViewBoxHeight * 0.8" text-anchor="middle" :font-size="enemyHpViewBoxHeight * 0.8">{{ enemyHpNow }} / {{ enemyHpMax }}</text>
+                </svg>
+            </div>
         </div>
-        <div class="width-100per name">わんこ Lv:{{level}}</div>
-        <div id="hp" class="width-100per">
-            <div class="inline-block" style="width:35px">HP</div>
-            <svg class="inline-block" :viewBox="hpViewBox">
-                <rect class="bar-status max" :width="hpMax" :height="hpViewBoxHeight" :rx="hpRadius" :ry="hpRadius"></rect>
-                <rect class="bar-status now" id="hp-now" :width="hpNow" :height="hpViewBoxHeight" :rx="hpRadius" :ry="hpRadius"></rect>
-                <text :x="hpMax / 2" :y="hpViewBoxHeight * 0.8" text-anchor="middle" :font-size="hpViewBoxHeight * 0.8">{{ hpNow }} / {{ hpMax }}</text>
-            </svg>
-        </div>
-        <div id="exp" class="width-100per">
-            <div class="inline-block" style="width:35px">EXP</div>
-            <svg class="inline-block" :viewBox="expViewBox">
-                <rect class="bar-status max" :width="expMax" :height="expViewBoxHeight" :rx="expRadius" :ry="expRadius"></rect>
-                <rect class="bar-status now" id="exp-now" :width="expNow" :height="expViewBoxHeight" :rx="expRadius" :ry="expRadius"></rect>
-                <text :x="expMax / 2" :y="expViewBoxHeight * 0.8" text-anchor="middle" :font-size="expViewBoxHeight * 0.8">{{ expNow }} / {{ expMax }}</text>
-            </svg>
+        <div class="mine">
+            <div class="width-100per name">わんこ Lv:{{level}}</div>
+            <div id="hp" class="width-100per">
+                <div class="inline-block" style="width:35px">HP</div>
+                <svg class="inline-block" :viewBox="hpViewBox">
+                    <rect class="bar-status max" :width="hpMax" :height="hpViewBoxHeight" :rx="hpRadius" :ry="hpRadius"></rect>
+                    <rect class="bar-status now" id="hp-now" :width="hpNow" :height="hpViewBoxHeight" :rx="hpRadius" :ry="hpRadius"></rect>
+                    <text :x="hpMax / 2" :y="hpViewBoxHeight * 0.8" text-anchor="middle" :font-size="hpViewBoxHeight * 0.8">{{ hpNow }} / {{ hpMax }}</text>
+                </svg>
+            </div>
+            <div id="exp" class="width-100per">
+                <div class="inline-block" style="width:35px">EXP</div>
+                <svg class="inline-block" :viewBox="expViewBox">
+                    <rect class="bar-status max" :width="expMax" :height="expViewBoxHeight" :rx="expRadius" :ry="expRadius"></rect>
+                    <rect class="bar-status now" id="exp-now" :width="expNow" :height="expViewBoxHeight" :rx="expRadius" :ry="expRadius"></rect>
+                    <text :x="expMax / 2" :y="expViewBoxHeight * 0.8" text-anchor="middle" :font-size="expViewBoxHeight * 0.8">{{ expNow }} / {{ expMax }}</text>
+                </svg>
+            </div>
         </div>
     </div>
 </template>
@@ -86,10 +90,27 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
     position: fixed;
-    bottom: 30px;
+    bottom: 10px;
     left: 30px;
     width: 100%;
     max-width: 450px;
+
+    border-radius: 5px;
+    background: rgba($color: #FFFFFF, $alpha: 0.6);
+    padding: 10px;
+
+    .enemy {
+        border-radius: 5px;
+        background: rgba($color: #FF0000, $alpha: 0.4);
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+
+    .mine {
+        border-radius: 5px;
+        background: rgba($color: #0000FF, $alpha: 0.4);
+        padding: 10px;
+    }
 
     .width-100per {
         width: 100%;
