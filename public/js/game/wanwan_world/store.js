@@ -1,5 +1,5 @@
 // 全コンポーネントの状態を一元管理するデータストア
-const store = {
+var store = {
     state: {
         isTitle: true
     },

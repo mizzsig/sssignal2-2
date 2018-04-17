@@ -1,6 +1,7 @@
 <template>
     <transition name="anime">
         <div class="wrapper" v-if="!state.isTitle">
+            <info />
             <character/>
             <status/>
         </div>
