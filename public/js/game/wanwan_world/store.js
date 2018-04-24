@@ -2,6 +2,7 @@
 var store = {
     state: {
         isTitle: true,
+        images: [],
         imageBase64: []
     },
     setIsTitle (value) {

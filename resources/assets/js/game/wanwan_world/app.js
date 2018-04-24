@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import axios from 'axios';
+// import axios from 'axios';
 
 // <app/> で app.vue コンポーネントを呼ぶ
 Vue.component('app', require('./app.vue'));
@@ -21,11 +21,15 @@ const app = new Vue({
         };
 
         for (let key of Object.keys(images)) {
-            axios.get(images[key], {responseType: 'arraybuffer'})
-                 .then((response) => {
-                     let imageBase64 = new Buffer(response.data, 'binary').toString('base64');
-                     store.state.imageBase64[key] = 'data:image/png;base64,' + imageBase64;
-                 });
+            store.state.images[key] = new Image();
+            store.state.images[key].src = images[key];
+            // axios.get(images[key], {responseType: 'arraybuffer'})
+            //      .then((response) => {
+            //          let imageBase64 = new Buffer(response.data, 'binary').toString('base64');
+            //          store.state.imageBase64[key] = 'data:image/png;base64,' + imageBase64;
+            //      });
         }
+
+        console.log(store.state.images);
     }
 });

@@ -11,7 +11,7 @@ export default {
     name: 'character',
     data: function () {
         return {
-            character_image: store.state.imageBase64.wanko_wait,
+            character_image: store.state.images.wanko_wait.src,
             isJumping: false
         }
     },
@@ -19,8 +19,8 @@ export default {
         click: function (event) {
             if (!this.isJumping) {
                 let character = this;
+                character.character_image = store.state.images.wanko_jump.src;
                 character.isJumping = true;
-                character.character_image = store.state.imageBase64.wanko_jump;
 
                 anime({
                     targets: event.target,
@@ -30,7 +30,7 @@ export default {
                     ],
                     easing: 'linear',
                     complete: function() {
-                        character.character_image = store.state.imageBase64.wanko_wait;
+                        character.character_image = store.state.images.wanko_wait.src;
                         character.isJumping = false;
                     }
                 });
