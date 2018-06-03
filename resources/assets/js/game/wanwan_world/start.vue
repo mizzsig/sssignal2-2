@@ -1,6 +1,6 @@
 <template>
     <transition name="anime">
-        <div class="wrapper" @click="setIsTitle" v-if="state.isTitle">
+        <div class="wrapper" @click="$emit('set')" v-if="state.isTitle">
             <div class="title">
                 <img src="/images/game/wanwan_world/title.png">
             </div>
@@ -22,11 +22,6 @@ export default {
             state: store.state
         }
     },
-    methods: {
-        setIsTitle () {
-            store.setIsTitle(false)
-        }
-    }
 }
 </script>
 

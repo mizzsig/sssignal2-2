@@ -5,19 +5,20 @@
 </template>
 
 <script>
-import anime from 'animejs'
+import anime from 'animejs';
 
 export default {
     name: 'character',
     data: function () {
         return {
             character_image: store.state.images.wanko_wait.src,
-            isJumping: false
+            isJumping: false,
+            state: store.state,
         }
     },
     methods: {
         click: function (event) {
-            if (!this.isJumping) {
+            if (!this.isJumping && !this.state.isBattle) {
                 let character = this;
                 character.character_image = store.state.images.wanko_jump.src;
                 character.isJumping = true;
@@ -29,10 +30,9 @@ export default {
                         { value: 0, duration: 120}
                     ],
                     easing: 'linear',
-                    complete: function() {
-                        character.character_image = store.state.images.wanko_wait.src;
-                        character.isJumping = false;
-                    }
+                }).finished.then(() => {
+                    character.character_image = store.state.images.wanko_wait.src;
+                    character.isJumping = false;
                 });
             }
         }
@@ -45,5 +45,14 @@ export default {
     position: fixed;
     right: 30px;
     bottom: -50px;
+
+    max-height: 600px;
+    
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
 }
 </style>

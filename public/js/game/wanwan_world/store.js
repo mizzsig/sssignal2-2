@@ -2,8 +2,10 @@
 var store = {
     state: {
         isTitle: true,
+        isBattle: false,
+        isEnd: false,
+        steps: 0,
         images: [],
-        imageBase64: []
     },
     setIsTitle (value) {
         this.state.isTitle = value;
