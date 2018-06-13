@@ -1,22 +1,23 @@
 main {
-  @extend .content;
+    @extend .content;
 
-	$margin-size: 10px;
+    $margin-size: 10px;
 
-  @media #{$large} {
-	  width: calc(75% - #{$margin-size * 2});
-  }
+    @media #{$large} {
+        width: calc(75% - #{$margin-size * 2});
+        margin-bottom: 20px;
+    }
 
-  @media #{$small} {
-    width: calc(100% - #{$margin-size * 2});
-	}
+    @media #{$small} {
+        width: calc(100% - #{$margin-size * 2});
+    }
 
-  background-color: rgba(#FFFFFF, 0.8);
-	border: 3px solid #6363F0;
-	border-radius: 8px;
-	box-sizing: border-box;
-	padding: 10px;
-	margin: 0px $margin-size;
+    background-color: rgba(#FFFFFF, 0.8);
+    border: 3px solid #6363F0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 0px $margin-size;
 
 	$main-fontsize: 18px;
 	.search-bar {
