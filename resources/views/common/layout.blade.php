@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79013420-2"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-79013420-2');
-		</script>
-		@yield('meta')
+@if ($_SERVER['REMOTE_ADDR'] != $_ENV['TOERA_IP'])
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79013420-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-79013420-2');
+    </script>
+@endif
+    @yield('meta')
   </head>
   <body>
 <header>
