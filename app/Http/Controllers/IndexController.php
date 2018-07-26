@@ -9,10 +9,10 @@ class IndexController extends Controller
 {
     // route '/'
     static function index() {
-				$posts = Post::orderBy('_id', 'desc')->get();
+        $posts = Post::orderBy('_id', 'desc')->get();
 
         return view('index', [
-						'posts' => $posts
-				])->with('title', '');
+            'posts' => $posts
+        ])->with('title', '');
     }
 }
