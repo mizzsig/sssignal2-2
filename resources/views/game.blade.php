@@ -10,7 +10,7 @@
 <meta name="twitter:title" content="{{ $post['title'] }}">
 <meta name="description" content="{{ $post['description'] }}">
 <meta name="twitter:description" content="{{ $post['description'] }}">
-<meta name="twitter:image" content="{{'https://sssignal.com' . $post['image'] }}">
+<meta name="twitter:image" content="{{'https://sssignal.com' . $post['twitter-image'] }}">
 @endsection
 
 @section('main')
