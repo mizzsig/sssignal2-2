@@ -52,4 +52,27 @@
 		margin: 20px 0px;
 		line-height: 1.5;
 	}
+
+	table { margin-bottom: $padding-size; }
+
+	table, th, td {
+		text-align: center;
+		border: 1px solid #AAA;
+		border-collapse: collapse;
+
+		padding: 10px;
+	}
+
+	.table-marginleft { margin-left: $padding-size; }
+	.table-backcolor { background-color: rgba(0, 48, 255, 0.1); }
+
+	.normal-ul {
+		list-style-type: disc;
+
+		li {
+			margin-left: 20px;
+		}
+	}
+
+	.scroll { overflow: scroll; }
 }
