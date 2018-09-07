@@ -177,11 +177,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-				// To connect MongoDB
-				Jenssegers\Mongodb\MongodbServiceProvider::class,
+        // To connect MongoDB
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
 
-				// MongoDBのBodyを表示用に分解してくれる
-				App\Providers\PostBodyServiceProvider::class,
+        // MongoDBのBodyを表示用に分解してくれる
+        App\Providers\PostBodyServiceProvider::class,
 
     ],
 
@@ -232,7 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-				'Moloquent' => Jenssegers\Mongodb\Eloquent\Model::class,
+        'Moloquent' => Jenssegers\Mongodb\Eloquent\Model::class,
 
     ],
 

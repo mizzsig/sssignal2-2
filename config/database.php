@@ -14,7 +14,7 @@ return [
     */
 
 //    'default' => env('DB_CONNECTION', 'mysql'),
-		'default' => env('DB_CONNECTION', 'mongodb'),
+    'default' => env('DB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -79,13 +79,13 @@ return [
             'prefix' => '',
         ],
 
-				// MongoDBとの接続用に追加した
-				'mongodb' => [
-						'driver' => 'mongodb',
-						'host' => env('DB_HOST', 'localhost'),
-						'port' => env('DB_POST', 27017),
-						'database' => env('DB_DATABASE', 'testDB'),
-				],
+        // MongoDBとの接続用に追加した
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_POST', 27017),
+            'database' => env('DB_DATABASE', 'website'),
+        ],
 
     ],
 
