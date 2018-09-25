@@ -39,6 +39,7 @@ class PostBodyServiceProvider extends ServiceProvider
                     $str .= '<' . $value['type'] 
                          . (isset($value['id']) ? ' id="' . $value['id'] . '"' : '')
                          . (isset($value['class']) ? ' class="' . $value['class'] . '"' : '') 
+                         . (isset($value['src']) ? ' src="' . $value['src'] . '"' : '')
                          . (isset($value['option']) ? ' ' . $value['option'] : '') 
                          . '>' 
                          . $this->writeBody($value['body']) 
@@ -47,6 +48,7 @@ class PostBodyServiceProvider extends ServiceProvider
                     $str .= '<' . $value['type'] 
                          . (isset($value['id']) ? ' id="' . $value['id'] . '"' : '')
                          . (isset($value['class']) ? ' class="' . $value['class'] . '"' : '') 
+                         . (isset($value['src']) ? ' src="' . $value['src'] . '"' : '')
                          . (isset($value['option']) ? ' ' . $value['option'] : '') 
                          . '>' 
                          . $value['body']

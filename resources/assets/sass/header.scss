@@ -18,15 +18,15 @@ $header-height: 40px;
 
 // 上に出てくるヘッダー
 header {
-  height: $header-height;
-  width: 100%;
-  // for debug
-  background-color: #C5C4EF;
-  position: fixed;
-	user-select: none;
-	-ms-user-select: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
+    height: $header-height;
+    width: 100%;
+    z-index: 100;
+    background-color: #C5C4EF;
+    position: fixed;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 
 	@media #{$small} {
 		.large-header {
