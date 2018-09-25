@@ -154,7 +154,7 @@ export default {
             this.width = document.documentElement.clientWidth * 0.25 > 300 ? 300 : document.documentElement.clientWidth * 0.25;
         }
     },
-    mounted() {
+    created() {
         // 画像のプリロード
         let images = {
             wait : '/images/twitter_button.png',
