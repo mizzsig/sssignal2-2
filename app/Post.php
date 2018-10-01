@@ -4,5 +4,5 @@ namespace App;
 
 class Post extends \Moloquent
 {
-		protected $collection = 'post';
+    protected $collection = 'post';
 }

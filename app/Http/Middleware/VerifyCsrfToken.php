@@ -13,6 +13,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         // postリクエストの許可
-				'/about'
+        '/about'
     ];
 }

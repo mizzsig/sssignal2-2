@@ -32,6 +32,6 @@ class ContactSent extends Mailable
     public function build()
     {
         return $this->subject('お問い合わせメール')
-										->text('common.email');
+                    ->text('common.email');
     }
 }
