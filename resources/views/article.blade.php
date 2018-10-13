@@ -23,7 +23,13 @@
 @endsection
 
 @section('main')
+<div class="main-content">
 {!! $body->writeBody($post['body']) !!}
+</div>
+{{-- コメント --}}
+<div class="container-comment">
+    コメントする
+</div>
 @endsection
 
 @section('sub')
