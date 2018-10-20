@@ -27,9 +27,7 @@
 {!! $body->writeBody($post['body']) !!}
 </div>
 {{-- コメント --}}
-<div class="container-comment">
-    コメントする
-</div>
+<div class="comment"></div>
 @endsection
 
 @section('sub')
