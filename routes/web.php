@@ -24,6 +24,3 @@ Route::get('/soft/{url}', 'SoftController@soft');
 
 Route::get('/column', 'ColumnController@index'); 
 Route::get('/column/{url}', 'ColumnController@article');
-
-
-

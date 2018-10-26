@@ -1,87 +1,59 @@
 <template>
-    <div class="show-comment" v-resize="resize">
+    <div class="show-comment">
         <div class="section-top">
             コメント一覧
         </div>
-        <!-- 下のやつをforで回す -->
-        <div class="comment">
-            <img class="icon" src="/images/game/wanwan_world/wanko.png">
-            <div class="serif">
-                <div class="name-date">
-                    ななし
-                </div>
-                <div class="comment-body">
-                    また 髪の話　してる・・・
-                </div>
+        <transition name="fade" mode="out-in">
+            <div v-if="comments.length > 0" key="comment">
+                <transition-group name="fade" tag="div">
+                    <div class="comment" v-for="comment in comments" :key="comment.id">
+                        <img class="icon" :src="comment.image">
+                        <div class="serif">
+                            <div class="name-date">
+                                {{ comment.name }}
+                            </div>
+                            <div class="comment-body" v-html="comment.body">
+                            </div>
+                        </div>
+                    </div>
+                </transition-group>
             </div>
-        </div>
-        <div class="comment">
-            <img class="icon" src="/images/game/wanwan_world/wanko.png">
-            <div class="serif">
-                <div class="name-date">
-                    mizzsig@管理人
-                </div>
-                <div class="comment-body">
-                    わたしが髪です
-                </div>
+            <div v-if="firstLoad && (comments.length === 0)" key="noComment">
+                <img class="no-comment" :src="noCommentURL">
             </div>
-        </div>
-        <div class="comment">
-            <img class="icon" src="/images/game/wanwan_world/wanko.png">
-            <div class="serif">
-                <div class="name-date">
-                    ななし
-                </div>
-                <div class="comment-body">
-                    arisan tokotoko tokotoko arisan tokotoko tokotoko arisan tokotoko tokotoko arisan tokotoko tokotoko
-                </div>
-            </div>
-        </div>
+        </transition>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data: () => {
-
+        return {
+            noCommentURL: '',
+            comments: [],
+            firstLoad: false
+        }
     },
-    // インスタンス作成後
     created() {
-        this.getAllComment();
+        let image = new Image();
+        image.src = '/images/comments/no_comment.png';
+
+        this.noCommentURL = image.src;
     },
     // DOM要素作成完了後
     mounted() {
-        this.resize();
+        this.getAllComment();
     },
     methods: {
         // コメントを取得する
         getAllComment() {
-
-        },
-        // コメント吹き出しの横幅を調整する
-        resize(event) {
-            let width = document.getElementsByClassName('show-comment')[0].clientWidth;
-            let serifs = document.getElementsByClassName('serif');
-
-            for (let i = 0; i < serifs.length; i++) {
-                if (document.documentElement.clientWidth > 550) {
-                    serifs[i].style.maxWidth = width - 230 + 'px';
-                } else {
-                    serifs[i].style.maxWidth = '';
-                }
-            }
-        }
-    },
-    directives: {
-        resize: {
-            inserted: (el, binding) => {
-                let f = function (evt) {
-                    if (binding.value(evt, el)) {
-                        window.removeEventListener('resize', f);
-                    }
-                };
-                window.addEventListener('resize', f);
-            }
+            axios.get(location.protocol + '//' + location.host + '/api/comment' + location.pathname)
+                .then(response => {
+                    this.comments = response.data;
+                    this.firstLoad = true;
+                });
         }
     }
 }
@@ -107,6 +79,18 @@ export default {
         width: 90%;
     }
 
+    .no-comment {
+        border-radius: 2px;
+        margin-bottom: 15px;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 0.2s ease;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
+    }
+
     .comment {
         margin: 10px;
 
@@ -119,6 +103,7 @@ export default {
             height: 100px;
             border-radius: 8px;
             margin: 10px;
+            margin-right: 15px;
 
             @media only screen and (max-width: 550px) {
                 display: block;
@@ -138,8 +123,11 @@ export default {
             vertical-align: top;
             padding: $margin-size;
             margin-bottom: $margin-size;
+            text-align: left;
+            word-break: break-all;
 
             @media only screen and (max-width: 550px) {
+                width: calc(100% - 15px);
                 &::before {
                     content: "";
                     position: absolute;
@@ -152,6 +140,8 @@ export default {
             }
 
             @media only screen and (min-width: 551px) {
+                width: 100%;
+                max-width: calc(100% - 160px);
                 &::before {
                     content: "";
                     position: absolute;

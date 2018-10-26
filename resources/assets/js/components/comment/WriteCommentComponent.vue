@@ -3,34 +3,39 @@
         <div class="section-top">
             コメント投稿
         </div>
-        <div class="wrapper">
-            <div class="icon">
-                <transition name="window">
-                    <div class="image-window" v-show="isShowImageWindow">
-                        <div class="image-container">
-                            <img @click="changeImage" v-for="(image, key) in images" :key="key" :src="image.src">
-                        </div>
-                    </div> 
-                </transition>
-                <transition name="window">
-                    <div class="image-window-allow" v-show="isShowImageWindow"></div>
-                </transition>
-                <img class="icon-image" @click="showImageWindow" :src="imageURL">
+        <transition name="fade" mode="out-in">
+            <div v-if="!isSuccess" class="wrapper" key="notSuccess">
+                <div class="icon">
+                    <transition name="window">
+                        <div class="image-window" v-show="isShowImageWindow">
+                            <div class="image-container">
+                                <img @click="changeImage" v-for="(image, key) in images" :key="key" :src="image.src">
+                            </div>
+                        </div> 
+                    </transition>
+                    <transition name="window">
+                        <div class="image-window-allow" v-show="isShowImageWindow"></div>
+                    </transition>
+                    <img class="icon-image" @click="showImageWindow" :src="imageURL">
+                </div>
+                <div class="body">
+                    <input @focus="setDefaultName" id="name" type="text" placeholder="名前（15文字以内）" v-model="name" maxlength="15" />
+                    <textarea id="text" placeholder="コメント" v-model="text" maxlength="3000" />
+                    <button class="submit" @click="submit">
+                        投稿！
+                    </button>
+                </div>
             </div>
-            <div class="body">
-                <input id="url" v-model="urlPath" />
-                <input @focus="setDefaultName" id="name" type="text" placeholder="名前（15文字以内）" v-model="name" maxlength="15" />
-                <textarea id="text" placeholder="コメント" v-model="text" maxlength="3000" />
-                <button class="submit" @click="submit">
-                    投稿！
-                </button>
+            <div v-if="isSuccess" key="isSuccess">
+                <img class="thanks" :src="thanksCommentURL">
             </div>
-        </div>
+        </transition>
     </div>
 </template>
 
 <script>
 import anime from 'animejs';
+import axios from 'axios';
 
 export default {
     data: () => {
@@ -39,9 +44,10 @@ export default {
             text: '',
             images: [],
             imageURL: '',
-            urlPath: '',
             isShowImageWindow: false,
-            isSubmit: false
+            isSubmit: false,
+            isSuccess: false,
+            thanksCommentURL: ''
         }
     },
     created() {
@@ -83,8 +89,11 @@ export default {
         // デフォルトのアイコンを設定
         this.imageURL = this.images[0].src;
 
-        // APIに送信するためにURLを取得
-        this.urlPath = location.pathname;
+        // コメントありがとうのURL
+        let image = new Image();
+        image.src = '/images/comments/thanks_comment.png';
+
+        this.thanksCommentURL = image.src;
     },
     mounted() {
         this.checkSubmitButton();
@@ -152,7 +161,16 @@ export default {
                 }
 
                 // APIへのリクエスト発行
-                console.log('API');
+                axios.put('/api/comment' + location.pathname, {
+                    name: this.name,
+                    body: this.text,
+                    image: this.imageURL
+                }).then(() => {
+                    this.isSuccess = true;
+                    this.$emit('writeComment');
+                }).catch(() => {
+                    this.isSubmit = false;
+                });
             }
         }
     },
@@ -190,6 +208,13 @@ button, input, textarea {
     outline: none;
 }
 
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.2s ease;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
 .write-comment {
     $margin-size: 10px;
 
@@ -207,6 +232,10 @@ button, input, textarea {
         margin-bottom: 15px;
         font-size: 18px;
         width: 90%;
+    }
+
+    .thanks {
+        border-radius: 2px;
     }
 
     .wrapper {
