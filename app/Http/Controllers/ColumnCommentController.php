@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\sendCommentMail;
 use App\Post;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -89,9 +90,12 @@ class ColumnCommentController extends Controller
                 'reason' => 'image is not image file'
             ];
         } else {
+            // ドメイン指定があれば抜いておく
+            $input['image'] = parse_url($input['image'])['path'];
+
             // 画像が存在するか確認
             $client = new Client();
-            $res = $client->request('GET', $input['image'], ['verify' => false]);
+            $res = $client->request('GET', 'https://sssignal.com' . $input['image'], ['verify' => false]);
 
             // 画像が存在しなかった
             if ($res->getStatusCode() != '200') {
@@ -131,16 +135,15 @@ class ColumnCommentController extends Controller
             ];
         }
 
-        // メールを送信する
-        Mail::to($_ENV['MAIL_USERNAME'])
-            ->send(new ColumnCommentMail([
-                'url' => $type . '/' . $url,
-                'icon' => $newComment['image'],
-                'name' => $newComment['name'],
-                'body' => $newComment['body'],
-                'remote_addr' => $newComment['remote_addr'],
-                'user_agent' => $newComment['user_agent']
-            ]));
+        // メールを送信するキューを発行
+        sendCommentMail::dispatch([
+            'url' => $type . '/' . $url,
+            'icon' => $newComment['image'],
+            'name' => $newComment['name'],
+            'body' => $newComment['body'],
+            'remote_addr' => $newComment['remote_addr'],
+            'user_agent' => $newComment['user_agent']
+        ])->onQueue('sendCommentMail');
 
         return [
             'result' => true

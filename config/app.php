@@ -186,6 +186,8 @@ return [
         // MongoDBのBodyを表示用に分解してくれる
         App\Providers\PostBodyServiceProvider::class,
 
+        // MongoDBでキューを処理するためのクラス
+        Jenssegers\Mongodb\MongodbQueueServiceProvider::class,
     ],
 
     /*
