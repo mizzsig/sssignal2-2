@@ -38,7 +38,7 @@ export default {
     },
     created() {
         let image = new Image();
-        image.src = '/images/comments/no_comment.png';
+        image.src = '/images/comment/no_comment.png';
 
         this.noCommentURL = image.src;
     },

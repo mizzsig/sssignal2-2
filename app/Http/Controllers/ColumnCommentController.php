@@ -77,21 +77,31 @@ class ColumnCommentController extends Controller
         // 本文のヤベー奴を変える
         $body = htmlspecialchars($input['body']);
 
+        // 管理人かどうかをチェック
+        $isAdmin = false;
+        if (isset($input['password']) && ($_SERVER['REMOTE_ADDR'] === $_ENV['TOERA_IP'])) {
+            if (md5($input['password']) === $_ENV['COMMENT_PASSWORD_MD5']) {
+                $isAdmin = true;
+            }
+        }
+
         // アイコン画像のチェック
         if (!isset($input['image'])) {
             return [
                 'result' => false,
                 'reason' => 'image is empty'
             ];
-        } else if (!preg_match('#/images/.+(\.jpg|\.png|\.gif)$#', $input['image'])) {
-            // JPG画像 or PNG画像でないとき
-            return [
-                'result' => false,
-                'reason' => 'image is not image file'
-            ];
         } else {
             // ドメイン指定があれば抜いておく
             $input['image'] = parse_url($input['image'])['path'];
+
+            // 管理人じゃない時にアイコン用以外の画像が指定されてたらエラーにする
+            if (!$isAdmin && !preg_match('#/images/comment/icon/.+(\.jpg|\.png|\.gif)$#', $input['image'])) {
+                return [
+                    'result' => false,
+                    'reason' => 'image is not image file'
+                ];
+            }
 
             // 画像が存在するか確認
             $client = new Client();
@@ -105,8 +115,6 @@ class ColumnCommentController extends Controller
                 ];
             }
         }
-
-        // 管理人かどうかをチェック
 
         // コメントをDBに追加
         $comments = isset($post->comments) ? $post->comments : [];

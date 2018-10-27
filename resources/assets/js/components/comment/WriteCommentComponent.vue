@@ -53,11 +53,9 @@ export default {
     created() {
         // 画像のプリロード
         let images = [
-            '/images/game/wanwan_world/wanko.png',
-            '/images/twitter_button.png',
-            '/images/twitter_button_serif.png',
-            '/images/twitter_button2.png',
-            '/images/twitter_button_serif2.png',
+            '/images/comment/icon/wanko.png',
+            '/images/comment/icon/tyoutyo.png',
+            '/images/comment/icon/ari.png',
             '/images/game/wanwan_world/wanko.png',
             '/images/game/wanwan_world/wanko.png',
             '/images/game/wanwan_world/wanko.png',
@@ -91,7 +89,7 @@ export default {
 
         // コメントありがとうのURL
         let image = new Image();
-        image.src = '/images/comments/thanks_comment.png';
+        image.src = '/images/comment/thanks_comment.png';
 
         this.thanksCommentURL = image.src;
     },
@@ -165,9 +163,13 @@ export default {
                     name: this.name,
                     body: this.text,
                     image: this.imageURL
-                }).then(() => {
-                    this.isSuccess = true;
-                    this.$emit('writeComment');
+                }).then((response) => {
+                    if (response.data.result) {
+                        this.isSuccess = true;
+                        this.$emit('writeComment');
+                    } else {
+                        this.isSubmit = false;
+                    }
                 }).catch(() => {
                     this.isSubmit = false;
                 });
