@@ -53,30 +53,20 @@ export default {
     created() {
         // 画像のプリロード
         let images = [
+            '/images/comment/icon/kimono.png',
+            '/images/comment/icon/priest.png',
+            '/images/comment/icon/masakarist.png',
+            '/images/comment/icon/thinking.png',
+            '/images/comment/icon/hatena.png',
+            '/images/comment/icon/ponytail.png',
+            '/images/comment/icon/glasses.png',
+            '/images/comment/icon/sun.png',
+            '/images/comment/icon/darkness.png',
+            '/images/comment/icon/fish.png',
+            '/images/comment/icon/pinkHair.png',
             '/images/comment/icon/wanko.png',
             '/images/comment/icon/tyoutyo.png',
             '/images/comment/icon/ari.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
-            '/images/game/wanwan_world/wanko.png',
         ];
 
         for (let url of images) {
@@ -135,10 +125,10 @@ export default {
         },
         // 投稿ボタンをアクティブにするか判定
         checkSubmitButton() {
-            if ((this.name !== '') && (this.text !== '')) {
+            if ((this.name.replace(/\s/g, '') !== '') && (this.text.replace(/\s/g, '') !== '')) {
                 document.getElementsByClassName('submit')[0].style.background = '#dcc1ff';
             } else {
-                document.getElementsByClassName('submit')[0].style.background = '#c1ccff';
+                document.getElementsByClassName('submit')[0].style.background = '#d0d0d0';
             }
         },
         // APIにリクエストを送る
@@ -147,7 +137,7 @@ export default {
                 this.isSubmit = true;
 
                 // 値入っているかチェック
-                if (!(this.name !== '') || !(this.text !== '')) {
+                if (!(this.name.replace(/\s/g, '') !== '') || !(this.text.replace(/\s/g, '') !== '')) {
                     this.isSubmit = false;
                     return;
                 }
@@ -401,7 +391,7 @@ button, input, textarea {
                 border-radius: 8px;
                 display: block;
                 margin: $margin-size auto;
-                background-color: #c1ccff;
+                background-color: #d0d0d0;
 
                 transition: all 0.3s ease;
                 &:focus, &:hover {

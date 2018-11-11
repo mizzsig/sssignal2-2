@@ -125,6 +125,7 @@ class ColumnCommentController extends Controller
             'body' => nl2br(str_replace(['<', '>'], ['&lt;', '&gt;'], $body)),
             'image' => $input['image'],
             'date' => date('Y-m-d H:i:s'),
+            'isAdmin' => $isAdmin,
             // 管理人判別用のパラメータ・コメントした人のIPなどの情報入れる
             'remote_addr' => $_SERVER['REMOTE_ADDR'],
             'user_agent' => $_SERVER['HTTP_USER_AGENT']
@@ -148,7 +149,7 @@ class ColumnCommentController extends Controller
             'url' => $type . '/' . $url,
             'icon' => $newComment['image'],
             'name' => $newComment['name'],
-            'body' => $newComment['body'],
+            'body' => $body,
             'remote_addr' => $newComment['remote_addr'],
             'user_agent' => $newComment['user_agent']
         ])->onQueue('sendCommentMail');

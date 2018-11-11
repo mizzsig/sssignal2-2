@@ -8,11 +8,14 @@
                 <transition-group name="fade" tag="div">
                     <div class="comment" v-for="comment in comments" :key="comment.id">
                         <img class="icon" :src="comment.image">
-                        <div class="serif">
-                            <div class="name-date">
+                        <div v-bind:class="{ 'serif-notadmin': !comment.isAdmin, 'serif-admin': comment.isAdmin }">
+                            <div class="name" v-bind:class="{ 'name-notadmin': !comment.isAdmin, 'name-admin': comment.isAdmin }">
                                 {{ comment.name }}
                             </div>
                             <div class="comment-body" v-html="comment.body">
+                            </div>
+                            <div class="comment-date">
+                                {{ comment.date }}
                             </div>
                         </div>
                     </div>
@@ -115,9 +118,8 @@ export default {
             }
         }
 
-        .serif {
+        .serif-notadmin {
             display: inline-block;
-            background: rgb(223, 229, 255);
             position: relative;
             border-radius: 4px;
             vertical-align: top;
@@ -125,6 +127,46 @@ export default {
             margin-bottom: $margin-size;
             text-align: left;
             word-break: break-all;
+            background: rgb(255, 223, 229);
+
+            @media only screen and (max-width: 550px) {
+                width: calc(100% - 15px);
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 47%;
+                    margin-top: -30px;
+                    border: 10px solid transparent;
+                    border-bottom: 10px solid rgb(255, 223, 229);
+                    box-sizing: border-box;
+                }
+            }
+
+            @media only screen and (min-width: 551px) {
+                max-width: calc(100% - 160px);
+                margin-top: $margin-size;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 30px;
+                    margin-left: -30px;
+                    border: 10px solid transparent;
+                    border-right: 10px solid rgb(255, 223, 229);
+                    box-sizing: border-box;
+                }
+            }
+        }
+
+        .serif-admin {
+            display: inline-block;
+            position: relative;
+            border-radius: 4px;
+            vertical-align: top;
+            padding: $margin-size;
+            margin-bottom: $margin-size;
+            text-align: left;
+            word-break: break-all;
+            background: rgb(223, 229, 255);
 
             @media only screen and (max-width: 550px) {
                 width: calc(100% - 15px);
@@ -140,8 +182,8 @@ export default {
             }
 
             @media only screen and (min-width: 551px) {
-                width: 100%;
                 max-width: calc(100% - 160px);
+                margin-top: $margin-size;
                 &::before {
                     content: "";
                     position: absolute;
@@ -152,22 +194,36 @@ export default {
                     box-sizing: border-box;
                 }
             }
+        }
 
-            .name-date {
-                background: rgb(201, 201, 252);
-                border-bottom: 2px solid rgb(137, 137, 223);
-                border-radius: 4px;
-                padding: 5px 10px;
-                position: absolute;
-                top: -10px;
-                left: -10px;
-            }
+        .name-notadmin {
+            background: rgb(252, 201, 201);
+            border-bottom: 2px solid rgb(223, 137, 137);
+        }
 
-            .comment-body {
-                margin-top: 15px;
-                padding: $margin-size;
-                word-wrap: break-word;
-            }
+        .name-admin {
+            background: rgb(201, 201, 252);
+            border-bottom: 2px solid rgb(137, 137, 223);
+        }
+
+        .name {
+            border-radius: 4px;
+            padding: 5px 10px;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+        }
+
+        .comment-body {
+            margin-top: 15px;
+            padding: $margin-size;
+            word-wrap: break-word;
+        }
+
+        .comment-date {
+            font-size: 12px;
+            padding: 5px $margin-size 0px $margin-size;
+            opacity: 0.5;
         }
     }
 }
