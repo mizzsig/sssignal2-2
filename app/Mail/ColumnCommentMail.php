@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ContactSent extends Mailable
+class ColumnCommentMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -30,7 +30,7 @@ class ContactSent extends Mailable
      */
     public function build()
     {
-        return $this->subject('お問い合わせメール')
-                    ->text('common.email');
+        return $this->subject('コメントが投稿されました！')
+                    ->text('common.emailComment');
     }
 }

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Mail;
 
 class AboutController extends Controller
 {
-		// route 'about'
+    // route 'about'
     static function index()
 	{
 		return view('about');

@@ -3,5 +3,6 @@
     "/css/index.css": "/css/index.css",
     "/css/mailform.css": "/css/mailform.css",
     "/css/gist.css": "/css/gist.css",
+    "/js/comment.js": "/js/comment.js",
     "/js/twitterButton.js": "/js/twitterButton.js"
 }

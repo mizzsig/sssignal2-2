@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Tokyo',
 
     /*
     |--------------------------------------------------------------------------
@@ -121,9 +121,12 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => env('APP_LOG', 'daily'),
 
-    'log_level' => env('APP_LOG_LEVEL', 'debug'),
+    'log_level' => env('APP_LOG_LEVEL', 'critical'),
+
+    // 30日分のログを保存
+    'log_max_files' => '30',
 
     /*
     |--------------------------------------------------------------------------
@@ -183,6 +186,8 @@ return [
         // MongoDBのBodyを表示用に分解してくれる
         App\Providers\PostBodyServiceProvider::class,
 
+        // MongoDBでキューを処理するためのクラス
+        Jenssegers\Mongodb\MongodbQueueServiceProvider::class,
     ],
 
     /*

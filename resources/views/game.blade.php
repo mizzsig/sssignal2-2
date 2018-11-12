@@ -14,7 +14,9 @@
 @endsection
 
 @section('main')
+<div class="main-content">
 {!! $body->writeBody($post['body']) !!}
+</div>
 @endsection
 
 @section('script')

@@ -2,6 +2,7 @@ main {
     @extend .content;
 
     $margin-size: 10px;
+    margin: 0px $margin-size;
 
     @media #{$large} {
         width: calc(75% - #{$margin-size * 2});
@@ -11,14 +12,17 @@ main {
     @media #{$small} {
         width: calc(100% - #{$margin-size * 2});
     }
+}
+
+.main-content {
+    $margin-size: 10px;
 
     background-color: rgba(#FFFFFF, 0.8);
+    padding: 10px;
     border: 3px solid #6363F0;
     border-radius: 8px;
     box-sizing: border-box;
-    padding: 10px;
-    margin: 0px $margin-size;
-		overflow: auto;
+    overflow: auto;
 
 	$main-fontsize: 18px;
 	.search-bar {

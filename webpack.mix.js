@@ -14,6 +14,7 @@ let mix = require('laravel-mix');
 mix//.js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/game/wanwan_world/app.js', 'public/js/game/wanwan_world')
     .js('resources/assets/js/twitterButton.js', 'public/js')
+    .js('resources/assets/js/components/comment/comment.js', 'public/js')
     .sass('resources/assets/sass/index.scss', 'public/css')
     .sass('resources/assets/sass/mailform.scss', 'public/css')
     .sass('resources/assets/sass/gist.scss', 'public/css');

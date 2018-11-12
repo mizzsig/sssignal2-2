@@ -56,7 +56,6 @@
 	table { margin-bottom: $padding-size; }
 
 	table, th, td {
-		text-align: center;
 		border: 1px solid #AAA;
 		border-collapse: collapse;
 
@@ -74,5 +73,7 @@
 		}
 	}
 
-	.scroll { overflow: auto; }
+    .scroll { overflow: auto; }
+    
+    .text-center { text-align: center; }
 }
