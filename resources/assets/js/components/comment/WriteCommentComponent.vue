@@ -85,6 +85,7 @@ export default {
     },
     mounted() {
         this.checkSubmitButton();
+        this.checkOS();
     },
     methods: {
         // デフォルトの名前を入れる
@@ -129,6 +130,14 @@ export default {
                 document.getElementsByClassName('submit')[0].style.background = '#dcc1ff';
             } else {
                 document.getElementsByClassName('submit')[0].style.background = '#d0d0d0';
+            }
+        },
+        // OSを判別し、専用の処理を行う
+        checkOS() {
+            // Windowsユーザの場合は、アイコン選択ウィンドウの幅を広げる
+            if (navigator.platform.indexOf("Win") != -1) {
+                document.getElementsByClassName('image-window')[0].style.width = '210px';
+                document.getElementsByClassName('image-container')[0].style.width = '200px';
             }
         },
         // APIにリクエストを送る
