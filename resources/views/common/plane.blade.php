@@ -11,6 +11,8 @@
       gtag('config', 'UA-79013420-2');
     </script>
 @endif
+    <script src="https://cdn.logrocket.io/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>window.LogRocket && window.LogRocket.init('rmt5w1/sssignal-log');</script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
