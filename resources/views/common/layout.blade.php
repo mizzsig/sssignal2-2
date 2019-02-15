@@ -11,6 +11,8 @@
         gtag('config', 'UA-79013420-2');
     </script>
 @endif
+    <script src="https://cdn.logrocket.io/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>window.LogRocket && window.LogRocket.init('rmt5w1/sssignal-log');</script>
     @yield('meta')
   </head>
   <body>
